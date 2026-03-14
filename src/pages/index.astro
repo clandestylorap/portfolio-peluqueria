@@ -2,6 +2,11 @@
 import '../styles/global.css'; // Verifica que la ruta sea correcta
 const direccion = "Calle de Juan Bravo, 21, 28006 Madrid";
 const telefono = "+34 915 75 87 67"; // Teléfono ficticio basado en la zona
+import { Image } from 'astro:assets';
+import look_1 from '../assets/look_1.png';
+import look_2 from '../assets/look_2.png';
+import look_3 from '../assets/look_3.png';
+import look_4 from '../assets/look_4.png';
 ---
 
 <html lang="es" class="scroll-smooth">
@@ -25,7 +30,7 @@ const telefono = "+34 915 75 87 67"; // Teléfono ficticio basado en la zona
           <!-- Logo tipográfico -->
           <a href="#top" class="flex items-center gap-2">
             <span class="text-sm tracking-[0.35em] text-[#f5f0e8]/60">PELUQUERÍA DE AUTOR</span>
-          </a>
+          </a>          
           <div class="flex items-center gap-8">
             <nav class="hidden items-center gap-8 text-sm font-sans text-[#f5f0e8]/80 md:flex">
               <a href="#estilos" class="transition-colors hover:text-[#f5f0e8]">Estilos</a>
@@ -48,7 +53,7 @@ const telefono = "+34 915 75 87 67"; // Teléfono ficticio basado en la zona
           aria-labelledby="hero-title"
         >
           <div
-            class="absolute inset-0 -z-10 bg-[url('/src/assets/salon.png')] bg-cover bg-center"
+            class="absolute inset-0 -z-10  bg-[url('/src/assets/salon.png')] bg-cover bg-center"
           >
             <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/90"></div>
           </div>
@@ -258,32 +263,31 @@ const telefono = "+34 915 75 87 67"; // Teléfono ficticio basado en la zona
 
             <div class="mt-8 grid gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-4">
               <figure class="relative aspect-square overflow-hidden rounded-3xl border border-white/10 bg-white/5">
-                <img
-                  src="/src/assets/look_1.png"
-                  alt="Corte bob pulido con acabado brillante."
-                  class="h-full w-full object-cover transition duration-700 ease-out hover:scale-105"
-                  loading="lazy"
-                />
+                <Image 
+                src={look_1} alt="Descripción del salón"
+                alt="Corte bob pulido con acabado brillante."
+                class="h-full w-full object-cover transition duration-700 ease-out hover:scale-105"
+                loading="lazy"/>
               </figure>
               <figure class="relative aspect-square overflow-hidden rounded-3xl border border-white/10 bg-white/5">
-                <img
-                  src="/src/assets/look_2.png"
+                <Image
+                  src={look_2}
                   alt="Coloración balayage en tonos miel cálidos."
                   class="h-full w-full object-cover transition duration-700 ease-out hover:scale-105"
                   loading="lazy"
                 />
               </figure>
               <figure class="relative aspect-square overflow-hidden rounded-3xl border border-white/10 bg-white/5">
-                <img
-                  src="/src/assets/look_3.png"
+                <Image
+                  src={look_3}
                   alt="Peinado con ondas suaves y textura natural."
                   class="h-full w-full object-cover transition duration-700 ease-out hover:scale-105"
                   loading="lazy"
                 />
               </figure>
               <figure class="relative aspect-square overflow-hidden rounded-3xl border border-white/10 bg-white/5">
-                <img
-                  src="/src/assets/look_4.png"
+                <Image
+                  src={look_4}
                   alt="Cabello rizado definido y luminoso."
                   class="h-full w-full object-cover transition duration-700 ease-out hover:scale-105"
                   loading="lazy"
