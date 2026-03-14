@@ -1,17 +1,452 @@
 ---
-
+import '../styles/global.css'; // Verifica que la ruta sea correcta
+const direccion = "Calle de Juan Bravo, 21, 28006 Madrid";
+const telefono = "+34 915 75 87 67"; // Teléfono ficticio basado en la zona
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Mane &amp; Style · Peluquería de autor</title>
+    <meta
+      name="description"
+      content="Mane &amp; Style es una peluquería de autor especializada en cortes, coloración premium y tratamientos hidratantes en un ambiente íntimo y sofisticado."
+    />
+  </head>
+  <body class="min-h-screen bg-[#050507] text-[#f5f0e8] antialiased">
+    <div class="relative flex min-h-screen flex-col bg-gradient-to-b from-black via-[#050507] to-[#0b0b10]">
+      <!-- Header -->
+      <header class="sticky top-0 z-30 border-b border-white/5 bg-black/70 backdrop-blur-md">
+        <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+          <!-- Logo tipográfico -->
+          <a href="#top" class="flex items-center gap-2">
+            <span class="text-sm tracking-[0.35em] text-[#f5f0e8]/60">PELUQUERÍA DE AUTOR</span>
+          </a>
+          <div class="flex items-center gap-8">
+            <nav class="hidden items-center gap-8 text-sm font-sans text-[#f5f0e8]/80 md:flex">
+              <a href="#estilos" class="transition-colors hover:text-[#f5f0e8]">Estilos</a>
+              <a href="#precios" class="transition-colors hover:text-[#f5f0e8]">Precios</a>
+            </nav>
+            <a
+              href="#reservar"
+              class="rounded-full border border-[#c9a667]/60 bg-[#c9a667]/90 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-black shadow-lg shadow-black/40 transition hover:bg-[#e6c887]"
+            >
+              Reservar Cita
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <main id="top" class="flex-1">
+        <!-- Hero -->
+        <section
+          class="relative isolate overflow-hidden border-b border-white/5 bg-black"
+          aria-labelledby="hero-title"
+        >
+          <div
+            class="absolute inset-0 -z-10 bg-[url('/src/assets/salon.png')] bg-cover bg-center"
+          >
+            <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/90"></div>
+          </div>
+
+          <div class="mx-auto flex max-w-6xl flex-col gap-10 px-4 py-16 sm:py-20 md:flex-row md:items-end md:gap-16 md:px-6 lg:px-8 lg:py-24">
+            <div class="max-w-xl space-y-6">
+              <p class="font-sans text-xs tracking-[0.25em] text-[#c9a667]/90">
+                MANE &amp; STYLE · PELUQUERÍA DE AUTOR
+              </p>
+              <h1
+                id="hero-title"
+                class="font-serif text-4xl tracking-tight text-[#f5f0e8] sm:text-5xl md:text-6xl"
+              >
+                Tu cabello es tu mejor accesorio.
+              </h1>
+              <p class="max-w-md font-sans text-sm leading-relaxed text-[#f5f0e8]/75 sm:text-base">
+                Una experiencia íntima y personalizada donde cada detalle está pensado para resaltar tu
+                estilo. Técnica, calma y elegancia en el corazón de la ciudad.
+              </p>
+              <div class="flex flex-wrap items-center gap-4 pt-2">
+                <a
+                  href="#reservar"
+                  class="rounded-full border border-[#c9a667]/70 bg-[#c9a667] px-6 py-3 text-xs font-semibold uppercase tracking-[0.22em] text-black shadow-xl shadow-black/40 transition hover:bg-[#e6c887]"
+                >
+                  Reservar Cita
+                </a>
+                <a
+                  href="#estilos"
+                  class="text-xs font-semibold uppercase tracking-[0.22em] text-[#f5f0e8]/80 underline-offset-4 hover:text-[#f5f0e8] hover:underline"
+                >
+                  Ver Estilos
+                </a>
+              </div>
+            </div>
+
+            <div class="mt-6 flex w-full justify-between gap-6 border-t border-white/10 pt-6 text-xs text-[#f5f0e8]/70 md:mt-0 md:w-auto md:flex-col md:border-t-0 md:border-l md:pl-8">
+              <div>
+                <p class="font-sans text-[0.7rem] uppercase tracking-[0.22em] text-[#f5f0e8]/50">
+                  Horario
+                </p>
+                <p class="mt-1 font-sans">Lun - Sáb · 10:00 - 20:00</p>
+              </div>
+              <div>
+                <p class="font-sans text-[0.7rem] uppercase tracking-[0.22em] text-[#f5f0e8]/50">
+                  Dirección
+                </p>
+                <p class="mt-1 font-sans">
+                  {direccion}
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Servicios / Estilos -->
+        <section
+          id="estilos"
+          class="border-b border-white/5 bg-[#050507] py-16 sm:py-20"
+          aria-labelledby="servicios-title"
+        >
+          <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col gap-4 border-l border-[#c9a667]/60 pl-4 sm:gap-6 sm:pl-6">
+              <p class="font-sans text-xs tracking-[0.25em] text-[#c9a667]/90">
+                SERVICIOS SELECCIONADOS
+              </p>
+              <h2
+                id="servicios-title"
+                class="font-serif text-2xl text-[#f5f0e8] sm:text-3xl"
+              >
+                Estilos pensados para realzar tu identidad.
+              </h2>
+              <p class="max-w-2xl font-sans text-sm leading-relaxed text-[#f5f0e8]/70 sm:text-base">
+                Cada servicio comienza con una consulta personalizada donde analizamos tu tipo de cabello,
+                estilo de vida y objetivos. Trabajamos con productos de autor y técnicas de precisión.
+              </p>
+            </div>
+
+            <div
+              class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+              aria-label="Listado de servicios"
+            >
+              <!-- Servicio 1 -->
+              <article class="group flex flex-col justify-between rounded-3xl border border-white/10 bg-gradient-to-b from-white/5 to-transparent px-5 py-6 shadow-lg shadow-black/40 transition hover:border-[#c9a667]/80 hover:bg-white/5 sm:px-6 sm:py-7">
+                <header class="space-y-3">
+                  <h3 class="font-serif text-xl text-[#f5f0e8]">
+                    Corte &amp; Peinado
+                  </h3>
+                  <p class="font-sans text-sm leading-relaxed text-[#f5f0e8]/70">
+                    Cortes de autor y peinados con acabado editorial, adaptados a tus facciones y textura
+                    natural.
+                  </p>
+                </header>
+                <div class="mt-6 flex items-center justify-between">
+                  <p class="font-sans text-xs uppercase tracking-[0.2em] text-[#f5f0e8]/60">
+                    Desde
+                  </p>
+                  <p class="font-serif text-lg text-[#c9a667]">
+                    45&nbsp;€
+                  </p>
+                </div>
+              </article>
+
+              <!-- Servicio 2 -->
+              <article class="group flex flex-col justify-between rounded-3xl border border-white/10 bg-gradient-to-b from-white/5 to-transparent px-5 py-6 shadow-lg shadow-black/40 transition hover:border-[#c9a667]/80 hover:bg-white/5 sm:px-6 sm:py-7">
+                <header class="space-y-3">
+                  <h3 class="font-serif text-xl text-[#f5f0e8]">
+                    Coloración Premium
+                  </h3>
+                  <p class="font-sans text-sm leading-relaxed text-[#f5f0e8]/70">
+                    Técnicas de color de alta precisión: balayage, babylights y tonos personalizados con
+                    brillo de salón.
+                  </p>
+                </header>
+                <div class="mt-6 flex items-center justify-between">
+                  <p class="font-sans text-xs uppercase tracking-[0.2em] text-[#f5f0e8]/60">
+                    Desde
+                  </p>
+                  <p class="font-serif text-lg text-[#c9a667]">
+                    80&nbsp;€
+                  </p>
+                </div>
+              </article>
+
+              <!-- Servicio 3 -->
+              <article class="group flex flex-col justify-between rounded-3xl border border-white/10 bg-gradient-to-b from-white/5 to-transparent px-5 py-6 shadow-lg shadow-black/40 transition hover:border-[#c9a667]/80 hover:bg-white/5 sm:px-6 sm:py-7">
+                <header class="space-y-3">
+                  <h3 class="font-serif text-xl text-[#f5f0e8]">
+                    Tratamientos Hidratantes
+                  </h3>
+                  <p class="font-sans text-sm leading-relaxed text-[#f5f0e8]/70">
+                    Ritual de hidratación profunda, brillo espejo y reparación de la fibra para un cabello
+                    sedoso y disciplinado.
+                  </p>
+                </header>
+                <div class="mt-6 flex items-center justify-between">
+                  <p class="font-sans text-xs uppercase tracking-[0.2em] text-[#f5f0e8]/60">
+                    Desde
+                  </p>
+                  <p class="font-serif text-lg text-[#c9a667]">
+                    55&nbsp;€
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- Precios (ancla simple, reutiliza servicios) -->
+        <section
+          id="precios"
+          class="border-b border-white/5 bg-[#07070b] py-12 sm:py-14"
+          aria-label="Información de precios"
+        >
+          <div class="mx-auto flex max-w-6xl flex-col gap-6 px-4 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
+            <div class="max-w-xl">
+              <p class="font-sans text-xs tracking-[0.25em] text-[#c9a667]/90">
+                TRANSPARENCIA &amp; CALIDAD
+              </p>
+              <h2 class="mt-3 font-serif text-2xl text-[#f5f0e8] sm:text-3xl">
+                Precios claros, experiencia de lujo.
+              </h2>
+              <p class="mt-3 font-sans text-sm leading-relaxed text-[#f5f0e8]/70 sm:text-base">
+                Los precios finales se definen tras una breve consulta, en función de la longitud y el
+                estado de tu cabello. Siempre te informamos antes de comenzar cualquier servicio.
+              </p>
+            </div>
+            <div class="grid gap-4 text-sm font-sans text-[#f5f0e8]/90 sm:text-base">
+              <div class="flex items-center justify-between gap-4 border-b border-white/10 pb-2">
+                <span>Corte &amp; Peinado</span>
+                <span class="font-serif text-[#c9a667]">45&nbsp;€ · 60&nbsp;min</span>
+              </div>
+              <div class="flex items-center justify-between gap-4 border-b border-white/10 pb-2">
+                <span>Coloración Premium</span>
+                <span class="font-serif text-[#c9a667]">Desde 80&nbsp;€</span>
+              </div>
+              <div class="flex items-center justify-between gap-4">
+                <span>Tratamiento Hidratante Ritual</span>
+                <span class="font-serif text-[#c9a667]">55&nbsp;€ · 45&nbsp;min</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Galería -->
+        <section
+          aria-labelledby="galeria-title"
+          class="border-b border-white/5 bg-[#050507] py-16 sm:py-20"
+        >
+          <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+              <div class="space-y-3">
+                <p class="font-sans text-xs tracking-[0.25em] text-[#c9a667]/90">
+                  PORTFOLIO
+                </p>
+                <h2
+                  id="galeria-title"
+                  class="font-serif text-2xl text-[#f5f0e8] sm:text-3xl"
+                >
+                  Una selección de looks creados en el salón.
+                </h2>
+              </div>
+              <p class="max-w-md font-sans text-sm leading-relaxed text-[#f5f0e8]/70 sm:text-base">
+                Cada imagen refleja la filosofía de Mane &amp; Style: líneas limpias, color impecable y un
+                acabado que se mantiene más allá del salón.
+              </p>
+            </div>
+
+            <div class="mt-8 grid gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-4">
+              <figure class="relative aspect-square overflow-hidden rounded-3xl border border-white/10 bg-white/5">
+                <img
+                  src="/src/assets/look_1.png"
+                  alt="Corte bob pulido con acabado brillante."
+                  class="h-full w-full object-cover transition duration-700 ease-out hover:scale-105"
+                  loading="lazy"
+                />
+              </figure>
+              <figure class="relative aspect-square overflow-hidden rounded-3xl border border-white/10 bg-white/5">
+                <img
+                  src="/src/assets/look_2.png"
+                  alt="Coloración balayage en tonos miel cálidos."
+                  class="h-full w-full object-cover transition duration-700 ease-out hover:scale-105"
+                  loading="lazy"
+                />
+              </figure>
+              <figure class="relative aspect-square overflow-hidden rounded-3xl border border-white/10 bg-white/5">
+                <img
+                  src="/src/assets/look_3.png"
+                  alt="Peinado con ondas suaves y textura natural."
+                  class="h-full w-full object-cover transition duration-700 ease-out hover:scale-105"
+                  loading="lazy"
+                />
+              </figure>
+              <figure class="relative aspect-square overflow-hidden rounded-3xl border border-white/10 bg-white/5">
+                <img
+                  src="/src/assets/look_4.png"
+                  alt="Cabello rizado definido y luminoso."
+                  class="h-full w-full object-cover transition duration-700 ease-out hover:scale-105"
+                  loading="lazy"
+                />
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        <!-- Testimonio -->
+        <section
+          class="border-b border-white/5 bg-[#07070b] py-16 sm:py-20"
+          aria-labelledby="testimonio-title"
+        >
+          <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+            <p class="font-sans text-xs tracking-[0.25em] text-center text-[#c9a667]/90">
+              TESTIMONIO
+            </p>
+            <h2
+              id="testimonio-title"
+              class="sr-only"
+            >
+              Testimonio de clienta
+            </h2>
+            <figure class="mt-6 rounded-3xl border border-white/10 bg-black/60 px-6 py-8 text-center shadow-xl shadow-black/50 sm:px-10 sm:py-10">
+              <blockquote class="font-serif text-xl leading-relaxed text-[#f5f0e8] sm:text-2xl">
+                “Nunca había sentido que alguien entendiera tan bien mi cabello. Salgo del salón y sigo
+                recibiendo cumplidos semanas después.”
+              </blockquote>
+              <figcaption class="mt-6 font-sans text-sm text-[#f5f0e8]/70">
+                — Laura Martínez, clienta de Mane &amp; Style desde 2021
+              </figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <!-- Reserva -->
+        <section
+          id="reservar"
+          class="bg-[#050507] py-16 sm:py-20"
+          aria-labelledby="reservar-title"
+        >
+          <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+            <div class="rounded-3xl border border-[#c9a667]/50 bg-gradient-to-b from-[#141318] to-black px-6 py-8 shadow-2xl shadow-black/60 sm:px-10 sm:py-10">
+              <p class="font-sans text-xs tracking-[0.25em] text-[#c9a667]/90">
+                RESERVAS
+              </p>
+              <div class="mt-4 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+                <div class="space-y-3">
+                  <h2
+                    id="reservar-title"
+                    class="font-serif text-2xl text-[#f5f0e8] sm:text-3xl"
+                  >
+                    Agenda tu próxima cita en Mane &amp; Style.
+                  </h2>
+                  <p class="max-w-md font-sans text-sm leading-relaxed text-[#f5f0e8]/75 sm:text-base">
+                    Escríbenos por WhatsApp o llámanos para encontrar el horario que mejor se adapte a ti.
+                    Te ayudaremos a elegir el servicio ideal según tus necesidades.
+                  </p>
+                </div>
+                <div class="space-y-3 text-sm font-sans text-[#f5f0e8]/85">
+                  <p class="flex flex-col">
+                    <span class="text-xs uppercase tracking-[0.2em] text-[#f5f0e8]/60">
+                      Teléfono
+                    </span>
+                    <a href="tel:+34910000000" class="mt-1 hover:text-[#c9a667]">
+                      {telefono}
+                    </a>
+                  </p>
+                  <p class="flex flex-col">
+                    <span class="text-xs uppercase tracking-[0.2em] text-[#f5f0e8]/60">
+                      WhatsApp
+                    </span>
+                    <a
+                      href="https://wa.me/34910000000"
+                      target="_blank"
+                      rel="noreferrer"
+                      class="mt-1 hover:text-[#c9a667]"
+                    >
+                      Enviar mensaje
+                    </a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Footer -->
+      <footer class="border-t border-white/5 bg-black py-10">
+        <div class="mx-auto flex max-w-6xl flex-col gap-8 px-4 sm:flex-row sm:justify-between sm:px-6 lg:px-8">
+          <div class="space-y-3">
+            <p class="font-sans text-xs tracking-[0.25em] text-[#c9a667]/90">
+              MANE &amp; STYLE
+            </p>
+            <p class="font-serif text-lg text-[#f5f0e8]">
+              Peluquería de autor en Madrid.
+            </p>
+            <p class="max-w-sm font-sans text-sm leading-relaxed text-[#f5f0e8]/70">
+              Un espacio íntimo donde el tiempo se detiene y el foco está únicamente en ti y en tu cabello.
+            </p>
+          </div>
+          <div class="grid gap-6 text-sm font-sans text-[#f5f0e8]/80 sm:grid-cols-3 sm:gap-8">
+            <div>
+              <h3 class="text-xs font-semibold uppercase tracking-[0.2em] text-[#f5f0e8]/60">
+                Horarios
+              </h3>
+              <p class="mt-2">
+                Lun - Vie · 10:00 - 20:00<br />
+                Sáb · 10:00 - 18:00<br />
+                Domingos cerrado
+              </p>
+            </div>
+            <div>
+              <h3 class="text-xs font-semibold uppercase tracking-[0.2em] text-[#f5f0e8]/60">
+                Dirección
+              </h3>
+              <p class="mt-2">
+                {direccion}
+              </p>
+            </div>
+            <div>
+              <h3 class="text-xs font-semibold uppercase tracking-[0.2em] text-[#f5f0e8]/60">
+                Redes sociales
+              </h3>
+              <div class="mt-2 flex flex-col gap-1">
+                <a href="#" class="hover:text-[#c9a667]">
+                  Instagram
+                </a>
+                <a href="#" class="hover:text-[#c9a667]">
+                  Facebook
+                </a>
+                <a href="#" class="hover:text-[#c9a667]">
+                  TikTok
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mx-auto mt-8 max-w-6xl px-4 text-xs font-sans text-[#f5f0e8]/50 sm:px-6 lg:px-8">
+          <p>© {new Date().getFullYear()} Mane &amp; Style. Todos los derechos reservados.</p>
+        </div>
+      </footer>
+
+      <!-- Botón flotante de WhatsApp -->
+      <a
+        href="https://wa.me/34000000000?text=Hola,%20vengo%20de%20tu%20portfolio%20y%20me%20encanta%20esta%20web!"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Reservar cita por WhatsApp"
+        class="p-3 fixed bottom-5 right-5 z-40 inline-flex h-16 w-16 items-center justify-center rounded-full bg-[#25D366] text-white shadow-xl shadow-black/40 transition hover:scale-105 hover:bg-[#1ebe5d] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f5f0e8] focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+      >
+          <svg 
+          xmlns="http://www.w3.org/2000/svg" 
+          width="28" 
+          height="28" 
+          viewBox="0 0 24 24" 
+          fill="currentColor"
+        >
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+      </a>
+    </div>
+  </body>
 </html>
